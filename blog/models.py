@@ -7,7 +7,9 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.value
-      
+
+class Comment(models.Model):
+  content = models.TextField(max_length=300)
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.PROTECT)
@@ -19,6 +21,7 @@ class Post(models.Model):
     summary = models.TextField(max_length=500)
     content = models.TextField()
     tags = models.ManyToManyField(Tag, related_name="posts")
+    comments = models.ManyToManyField(Comment, related_name="posts")
 
     def __str__(self):
         return self.title
