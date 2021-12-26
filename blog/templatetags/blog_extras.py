@@ -40,6 +40,16 @@ def row(extra_classes=""):
 def endrow():
     return "</div>"
 
+  
+@register.simple_tag
+def col(extra_classes=""):
+    return format_html('<div class="{}">', extra_classes)
+
+
+@register.simple_tag
+def endcol():
+    return "</div>"
+
 @register.inclusion_tag("blog/post-list.html")
 def recent_posts(post):
     posts = Post.objects.exclude(pk=post.pk)[:5]

@@ -39,6 +39,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 INTERNAL_IPS = ["192.168.11.179"]
 AUTH_USER_MODEL = "blango_auth.User"
+ACCOUNT_ACTIVATION_DAYS = 7
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+REGISTRATION_OPEN = False
 
 # Application definition
 
