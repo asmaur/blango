@@ -1,6 +1,6 @@
 from rest_framework import generics
 
-from blog.api.serializers import PostSerializer, UserSerializer, PostDetailSerializer
+from blog.api.serializers import PostSerializer, UserSerializer, CommentSerializer
 from blog.models import Post
 from blango_auth.models import User
 from blog.api.permissions import AuthorModifyOrReadOnly, IsAdminUserForObject
